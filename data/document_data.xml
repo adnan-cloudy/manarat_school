@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data >
+
+        <!--Documents -->
+        <record id="doc1" model="manarat.document.title">
+            <field name="name">أصل شهادة الميلاد الكمبيوتر</field>
+        </record>
+		
+		<record id="doc2" model="manarat.document.title">
+            <field name="name">صور شخصية للطالب</field>
+        </record>
+		
+		<record id="doc3" model="manarat.document.title">
+            <field name="name">بطاقة الأم</field>
+        </record>
+		
+		<record id="doc4" model="manarat.document.title">
+            <field name="name">بطاقة الأب</field>
+        </record>
+		
+		<record id="doc5" model="manarat.document.title">
+            <field name="name">مؤهل الأم</field>
+        </record>
+		
+		<record id="doc6" model="manarat.document.title">
+            <field name="name">مؤهل الأب</field>
+        </record>
+		
+		<record id="doc7" model="manarat.document.title">
+            <field name="name">ورق التحويل \ بيان إلحاق</field>
+        </record>
+		
+		<record id="doc8" model="manarat.document.title">
+            <field name="name">بيان قيد \ درجات</field>
+        </record>
+		
+		<record id="doc9" model="manarat.document.title">
+            <field name="name">طلب تحويل إلكتروني</field>
+        </record>
+    </data>
+</openerp>

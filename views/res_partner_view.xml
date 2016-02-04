@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="view_partner_form_manarat">
+			<field name="name">res.partner.form.manarat</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<field name="parent_id" position="attributes">
+						<attribute name="domain">[('customer', '=', True)]</attribute>
+				</field>
+				<notebook>
+					
+					<page name="student_personal_information" string="Student Personal information">
+						<group>
+							<field name="student_first_name"> </field>
+							<field name="student_middle_name"> </field>
+							<field name="student_surname"> </field>
+							<field name="student_arabic_full_name"> </field>
+							<field name="student_birth_date"> </field>
+							<field name="student_place_of_birth"> </field>
+							<field name="student_gender"> </field>
+							<field name="student_nationality"> </field>
+							<field name="student_religion"> </field>
+							<field name="student_national_id"> </field>
+							<field name="student_birth_certificate_no"> </field>
+							<field name="student_issue_date"> </field>
+						</group>
+					</page>
+
+					<page name="student_educational_information" string="Student Educational information">
+						<group>
+							<field name="student_id"></field>
+							<field name="student_mother_tongue"></field>
+							<field name="student_first_foreign_language"> </field>
+							<field name="student_second_foreign_language"> </field>
+						</group>
+					</page>
+					
+					<page name="father_information" string="Father Information">
+						<group>
+							<field name="father_full_name"/>
+							<field name="father_nationality"> </field>
+							<field name="father_religion"> </field>
+							<field name="father_acadimic"> </field>
+							<field name="father_mob_no"> </field>
+							<field name="father_mob_no2"> </field>
+							<field name="father_email"> </field>
+							<field name="father_home_address"> </field>
+							<field name="father_home_tel"> </field>
+							<field name="father_job"> </field>
+							<field name="father_employer_address"> </field>
+							<field name="father_occupation_phone"> </field>
+							<field name="father_status"> </field>
+							<field name="father_id_type"> </field>
+							<field name="father_id_no">  </field>
+							
+						</group>
+					</page>
+					
+					<page name="mother_information" string="Mother information">
+						<group>
+							<field name="mother_full_name"> </field>
+							<field name="mother_nationality"> </field>
+							<field name="mother_religion"> </field>
+							<field name="mother_acadimic"> </field>
+							<field name="mother_mob_no"> </field>
+							<field name="mother_mob_no2"> </field>
+							<field name="mother_email"> </field>
+							<field name="mother_home_tel"> </field>
+							<field name="mother_home_address"> </field>
+							<field name="mother_job"> </field>
+							<field name="mother_employer_address"> </field>
+							<field name="mother_occupation_phone"> </field>
+							<field name="mother_status"> </field>
+							<field name="mother_id_type"> </field>
+							<field name="mother_id_no"> </field>
+						</group>
+					</page>
+					
+					<page name="guardian_details" string="Guardian Information">
+						<group>
+							<field name="first_guardian"> </field>
+							<field name="fg_full_name"> </field>
+							<field name="fg_relationship"> </field>
+							<field name="fg_relative"> </field>
+							<field name="fg_job"> </field>
+							<field name="fg_address"> </field>
+							<field name="fg_tel"> </field>
+							<field name="fg_mob"> </field>
+							<field name="fg_work_tel"> </field>
+							
+							<field name="second_guardian"> </field>
+							<field name="sg_full_name"> </field>
+							<field name="sg_relationship"> </field>
+							<field name="sg_relative"> </field>
+							<field name="sg_job"> </field>
+							<field name="sg_address"> </field>
+							<field name="sg_tel"> </field>
+							<field name="sg_mob"> </field>
+							<field name="sg_work_tel"> </field>
+						</group>
+					</page>
+					
+					<page name="Enrollment_data" string="Enrollment Data">
+						<group>
+							<field name="applicant_date"> </field>
+							<field name="registeration_date"> </field>
+							<field name="registeration_type"> </field>
+							<field  name="grade_level"> </field>
+							<field name="student_grade"> </field>
+							<field name="join_bus"> </field>
+							<field name="bus_status"> </field>
+							<field name="bus_route"> </field>
+							<field name="enrollment_date"> </field>
+							<field name="id_code"> </field>
+							<field name="left_date"> </field>
+							<field name="prev_school"> </field>
+							<field name="reason_of_transfer"> </field>
+						</group>
+					</page>
+					
+					<page name="Health_data" string="Health Information">
+						<group>
+							<field name="health_info"/>
+						</group>
+                    </page>
+				</notebook>
+				
+			</field>
+		</record>
+	
+	<record model="ir.ui.view" id="view_res_partner_filter_manarat">
+			<field name="name">res.partner.select.manarat</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_res_partner_filter"/>
+			<field name="arch" type="xml">
+				<filter name="type_person" position="before">
+					<filter string="Parent" name="parent" domain="[('parent','=',1)]"/>
+					<separator/>
+					<filter string="Student" name="student" domain="[('student','=',1)]"/>
+					<separator/>
+					<filter string="lead" name="Lead" domain="[('lead','=',1)]"/>
+				</filter>
+				
+				<group>
+					<filter string="Parent" domain="[]" context="{'group_by': 'parent_id'}"/>
+				</group>
+			</field>
+	</record>
+	</data>
+</openerp>

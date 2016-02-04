@@ -1,0 +1,42 @@
+<openerp>
+    <data>
+        <record id="group_pr" model="res.groups">
+            <field name="name">School / PR Manager</field>
+        </record>
+		<record id="group_principle" model="res.groups">
+            <field name="name">School / Principle</field>
+        </record>
+		<record id="group_teacher" model="res.groups">
+            <field name="name">School / Teacher</field>
+        </record>
+		<record id="group_accounting" model="res.groups">
+            <field name="name">School / Accounting</field>
+        </record>
+		<record id="group_prAssAmr" model="res.groups">
+            <field name="name">School / PR Assisstant American</field>
+        </record>
+		<record id="group_AssLan" model="res.groups">
+            <field name="name">School / PR Assisstant Language</field>
+        </record>
+		<record id="group_stuAff" model="res.groups">
+            <field name="name">School / Student Affairs</field>
+        </record>
+		
+		
+		<record model="ir.ui.menu" id="crm.menu_crm_leads"><!--Sales/Sales/Leads-->
+			<field eval="[(4, ref('group_pr')),(4, ref('group_prAssAmr')),(4, ref('group_AssLan'))]" name="groups_id"/>
+		</record>
+		
+		<record model="ir.ui.menu" id="base.menu_partner_form"><!--Sales/Sales/Customers-->
+			<field eval="[(4, ref('group_pr')),(4, ref('group_principle'))]" name="groups_id"/>
+		</record>
+		
+		<record model="ir.ui.menu" id="base.menu_base_partner">
+			<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_teacher')),(4, ref('group_accounting'))]" name="groups_id"/>
+		</record>
+		
+		<record model="ir.ui.menu" id="crm.menu_crm_opportunities">
+			<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_teacher')),(4, ref('group_accounting'))]" name="groups_id"/>
+		</record>
+    </data>
+</openerp>

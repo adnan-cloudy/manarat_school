@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<openerp>
+	<!-- EDI related Email Templates menu -->
+    <!--<data>
+        
+        <record model="ir.actions.act_window" id="action_email_templates_manarat">
+            <field name="name">Email Templates manarat</field>
+            <field name="res_model">email.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="email_template.email_template_tree" />
+            <field name="search_view_id" ref="email_template.view_email_template_search"/>
+            <field name="context" eval="{'search_default_model_id': ref('crm.lead')}"/>
+        </record>
+    </data>-->
+
+    <!-- Mail template is done in a NOUPDATE block
+         so users can freely customize/delete them -->
+    <data >
+
+        <!--Email template -->
+        <record id="email_template_manarat_no_available_spot1" model="email.template">
+            <field name="name">Manarat School - No available spot1</field>
+            <field name="email_from">${(object.user_id.email or '')|safe}</field>
+            <field name="subject">Manarat School - No available spot1</field>
+            <!--<field name="partner_to">${object.partner_id.parent_id.id}</field>-->
+			<field name="email_to">${(object.partner_id.parent_id.email or '')|safe}</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="auto_delete" eval="True"/>
+            <!--<field name="report_template" ref="report_sale_order"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>-->
+            <field name="body_html">
+				<![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <p>Dear ${(object.partner_id.parent_id.name or '')|safe},</p>
+    
+    <p>we are there are no availble spot</p>
+
+</div>
+            ]]>
+			</field>
+        </record>
+		
+
+        <!--Email template -->
+        <record id="email_template_manarat_data_not_complete" model="email.template">
+            <field name="name">Manarat School - Data not completed</field>
+            <field name="email_from">${(object.user_id.email or '')|safe}</field>
+            <field name="subject">Manarat School - Data not completed</field>
+            <!--<field name="partner_to">${object.partner_id.parent_id.id}</field>-->
+			<field name="email_to">${(object.partner_id.parent_id.email or '')|safe}</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="auto_delete" eval="True"/>
+            <!--<field name="report_template" ref="report_sale_order"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>-->
+            <field name="body_html">
+				<![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <p>Dear ${(object.partner_id.parent_id.name or '')|safe},</p>
+    
+    <p>Please comlete addmession info</p>
+
+</div>
+            ]]>
+			</field>
+        </record>
+
+		
+        <!--Email template -->
+        <record id="email_template_manarat_reject" model="email.template">
+            <field name="name">Manarat School - rejected</field>
+            <field name="email_from">${(object.user_id.email or '')|safe}</field>
+            <field name="subject">Manarat School</field>
+            <!--<field name="partner_to">${object.partner_id.parent_id.id}</field>-->
+			<field name="email_to">${(object.partner_id.parent_id.email or '')|safe}</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="auto_delete" eval="True"/>
+            <!--<field name="report_template" ref="report_sale_order"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>-->
+            <field name="body_html">
+				<![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <p>Dear ${(object.partner_id.parent_id.name or '')|safe},</p>
+    
+    <p>sorry your rejected</p>
+
+</div>
+            ]]>
+			</field>
+        </record>
+    </data>
+</openerp>
