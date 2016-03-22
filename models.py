@@ -24,7 +24,7 @@ REGISTERATION_TYPE = [("passed","Passed"),("new","New"),("none","None")]
 BUS_STATUS = [("going and come back","Going and come back"),("going","Going"),("back","Back")]
 
 STASTE = [('new','New'),('spot_checked','Spot checked'),('data_completed','Data Completed'),
-('confirm_fees','Fees payment confirmed'),('pass_assessment','Pass Assessment'),('installment_complete','Installment complete'),
+('confirm_fees','Fees payment confirmed'),('pass_assessment','Pass Assessment'),('installment_complete','Documents complete'),
 ('invoice_paid','Invoice paid'),('added_to_class_list','Added to class list')]
 
 	
@@ -144,7 +144,7 @@ class CrmLead(models.Model, AdmetionInfo):
 			spots = lead.level.available_spots
 			if(spots <= 0 ):
 				self.write(cr, uid, ids, {'wait_list': True}, context=context)
-				self.send_mail_without_pop(cr, uid, ids, context=context)
+				#self.send_mail_without_pop(cr, uid, ids, context=context)
 				#raise Warning( _( 'no available spots, admission added to waiting list' ) )
 			else:
 				self.write(cr, uid, ids, {'state': 'spot_checked'}, context=context)
@@ -170,10 +170,22 @@ class CrmLead(models.Model, AdmetionInfo):
 	
 		
 	def check_add_to_class_list(self, cr, uid, ids, context=None):
+		#documents
+		#for doc in lead.documents:
+		#	doc.write({'partner_id_rel':lead.partner_id.id})
+		#lead.partner_id.write({'documents': [x.id for x in lead.documents]})
+		
 		for lead in self.browse(cr, uid, ids, context=context):
 			self.pool['res.partner'].write(cr, uid, lead.partner_id.id, {'lead' : False,'customer' : True})
 			self.pool['res.partner'].write(cr, uid, lead.partner_id.parent_id.id, {'lead' : False,'customer' : True})
+			
+			#for doc in lead.documents:
+			#	self.pool['manarat.document'].write(cr, uid, doc,{'partner_id_rel':lead.partner_id.id})
+			#self.pool['res.partner'].write(cr, uid, lead.partner_id.id, {'documents': [x for x in lead.documents]})
+			
 		self.write(cr, uid, ids, {'state': 'added_to_class_list'}, context=context)
+		
+		
 		
 	def add_to_wait_list(self, cr, uid, ids, context=None):
 		self.write(cr, uid, ids, {'wait_list': True,'in_draft' : False}, context=context)
@@ -300,7 +312,9 @@ class CrmLead(models.Model, AdmetionInfo):
 			'student' : context['student']
 			
 		}
+		
 		partner = partner.create(cr, uid, vals, context=context)
+		
 		return partner
 
 		
@@ -555,6 +569,7 @@ class res_partner(models.Model, AdmetionInfo):
 	lead = fields.Boolean(String="Lead")
 	parent = fields.Boolean(String="Parent")
 	student = fields.Boolean(String="Student")
+	documents = fields.One2many('manarat.document','partner_id_rel',string='Documents')
 	
 	
 	# father info
@@ -609,6 +624,8 @@ class Document(models.Model):
 	status = fields.Selection(DOC_STATUS, string='Status')
 	
 	lead_id_rel = fields.Many2one('crm.lead')
+	partner_id_rel = fields.Many2one('res.partner')
+	
 
 	
 class Document_Title(models.Model):

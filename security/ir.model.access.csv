@@ -10,4 +10,6 @@ access_lead_manarat_pr,crm.lead_manarat_pr,crm.model_crm_lead,manarat_school.gro
 access_lead_manarat_prAssAmr,crm.lead_manarat_prAssAmr,crm.model_crm_lead,manarat_school.group_prAssAmr,1,1,1,1
 access_lead_manarat_AssLan,crm.lead_manarat_AssLan,crm.model_crm_lead,manarat_school.group_AssLan,1,1,1,1
 
+access_pricelist_manarat,product.price_manarat,product.model_product_pricelist,,1,1,1,1
+
 

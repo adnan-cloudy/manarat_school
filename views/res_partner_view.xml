@@ -125,6 +125,17 @@
 							<field name="health_info"/>
 						</group>
                     </page>
+					
+					<!--<page name="Documents" string="Documents">
+						<field name="documents" nolabel="1" widget="one2many_list">
+                                <tree string="Documents" editable="bottom">
+                                    <field name="name"/>
+									<field name="status"/>
+									<field name="date"/>
+								</tree>
+						</field>
+                    </page>-->
+					
 				</notebook>
 				
 			</field>

@@ -9,6 +9,20 @@
 				<button name="122" position = "attributes">
 					<attribute name ="context">{'default_action': 'create','default_name': 'convert'}</attribute>
 				</button>
+				
+				<field name="partner_name" position="attributes">
+					<attribute name="string">Student Name</attribute>
+				</field>
+				<field name="partner_id" position="attributes">
+					<attribute name="string">Exist Parent</attribute>
+				</field>
+				<label for="contact_name" position="attributes">
+					<attribute name="string">New Parent</attribute>
+				</label>
+				<field name="contact_name" position="attributes">
+					<attribute name="nolabel">1</attribute>
+				</field>
+				
 				<notebook>
 					<page name="student_personal_information" string="Student Personal information">
 						<group>
@@ -137,10 +151,15 @@
 			<field name="arch" type="xml">
 				<kanban position="attributes">
 					<attribute name ="default_group_by">state</attribute>
-					<attribute name="attrs">{'default_group_by': 'state'}</attribute>-->
-					<attribute name ="edit" >0</attribute>
+					<!--<attribute name="attrs">{'edit':False}</attribute>-->
+					<attribute name="edit">0</attribute>
 					<attribute name ="quick_create">0</attribute>
 				</kanban>
+				
+				 <div class="oe_dropdown_toggle oe_dropdown_kanban" position="attributes">
+					<attribute name ="invisible">1</attribute>
+				 </div>
+				 
 			</field>
 	</record>
 	

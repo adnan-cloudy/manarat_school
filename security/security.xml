@@ -28,15 +28,15 @@
 		</record>
 		
 		<record model="ir.ui.menu" id="base.menu_partner_form"><!--Sales/Sales/Customers-->
-			<field eval="[(4, ref('group_pr')),(4, ref('group_principle'))]" name="groups_id"/>
+				<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_accounting')),(4, ref('group_prAssAmr')),(4, ref('group_AssLan')),(4, ref('group_stuAff'))]" name="groups_id"/>
 		</record>
 		
 		<record model="ir.ui.menu" id="base.menu_base_partner">
-			<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_teacher')),(4, ref('group_accounting'))]" name="groups_id"/>
+			<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_teacher')),(4, ref('group_accounting')),(4, ref('group_prAssAmr')),(4, ref('group_AssLan')),(4, ref('group_stuAff'))]" name="groups_id"/>
 		</record>
 		
 		<record model="ir.ui.menu" id="crm.menu_crm_opportunities">
-			<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_teacher')),(4, ref('group_accounting'))]" name="groups_id"/>
+			<field eval="[(4, ref('group_pr')),(4, ref('group_principle')),(4, ref('group_teacher')),(4, ref('group_accounting')),(4, ref('group_prAssAmr')),(4, ref('group_AssLan')),(4, ref('group_stuAff'))]" name="groups_id"/>
 		</record>
     </data>
 </openerp>

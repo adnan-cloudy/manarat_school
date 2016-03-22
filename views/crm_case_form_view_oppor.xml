@@ -17,7 +17,7 @@
 						<button name="check_data_completed" string="Confirm data completed" states="spot_checked" type="object" class="oe_highlight" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_AssLan"/>
 						<button name="check_fees_payment" string="Confirm fees payment" states="data_completed" type="object" class="oe_highlight" groups="manarat_school.group_accounting"/>
 						<button name="check_pass_assessment" string="Pass assessment" states="confirm_fees" type="object" class="oe_highlight" groups="manarat_school.group_teacher"/>
-						<button name="check_installment_complete" string="Installment complete" states="pass_assessment" type="object" class="oe_highlight" groups="manarat_school.group_prAssAmr,manarat_school.group_stuAff"/>
+						<button name="check_installment_complete" string="Documents complete" states="pass_assessment" type="object" class="oe_highlight" groups="manarat_school.group_prAssAmr,manarat_school.group_stuAff"/>
 						<button name="check_invoice_paid" string="Invoice paid" states="installment_complete" type="object" class="oe_highlight" groups="manarat_school.group_accounting,manarat_school.group_pr"/>
 						<button name="check_add_to_class_list" string="Add to class list" states="invoice_paid" type="object" class="oe_highlight" groups="manarat_school.group_stuAff" />
 						<button name="add_to_wait_list" string="Add to waiting list" type="object" attrs="{'invisible': ['|',('wait_list', '=', True),('state', '=', 'added_to_class_list')]}" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_principle"/>
@@ -44,8 +44,8 @@
 					<group string='Assessment info'>
 							
 						<field name="pr_aprove" groups="manarat_school.group_pr"> </field>
-						<field name="tester_aprove" groups="manarat_school.group_pr,manarat_school.group_teacher"> </field>
-						<field name="principle_aprove" groups="manarat_school.group_pr,manarat_school.group_principle"> </field>
+						<field name="tester_aprove" groups="manarat_school.group_teacher"> </field>
+						<field name="principle_aprove" groups="manarat_school.group_principle"> </field>
 							
 					</group>
 				</notebook>
