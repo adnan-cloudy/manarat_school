@@ -1,22 +1,21 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "manarat_school",
+    'name': "Admission Management",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Addmissions""",
 
     'description': """
-        Long description of module's purpose
+        School Addmissions Management
     """,
 
-    'author': "Your Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Cloudypedia",
+    'website': "http://cloudypedia.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Customer Relationship Management',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
