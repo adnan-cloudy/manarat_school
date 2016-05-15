@@ -1,6 +1,0 @@
-# dotfiles
-.*
-!.gitignore
-!.mailmap
-# compiled python files
-*.py[co]
