@@ -479,7 +479,7 @@ class CrmLead(models.Model, AdmetionInfo):
 		email_template_obj = self.pool.get('email.template')
 		ir_model_data = self.pool.get('ir.model.data')
 		try:
-			template_id = ir_model_data.get_object_reference(cr, uid, 'manarat_school', 'email_template_manarat_no_available_spot1')[1]
+			template_id = ir_model_data.get_object_reference(cr, uid, 'school_admission', 'email_template_manarat_no_available_spot1')[1]
 		except ValueError:
 			template_id = False
 		if template_id:
@@ -503,7 +503,7 @@ class CrmLead(models.Model, AdmetionInfo):
 		assert len(ids) == 1, 'This option should only be used for a single id at a time.'
 		ir_model_data = self.pool.get('ir.model.data')
 		try:
-			template_id = ir_model_data.get_object_reference(cr, uid, 'manarat_school', 'email_template_manarat_no_available_spot1')[1]
+			template_id = ir_model_data.get_object_reference(cr, uid, 'school_admission', 'email_template_manarat_no_available_spot1')[1]
 		except ValueError:
 			template_id = False
 		try:
@@ -539,7 +539,7 @@ class CrmLead(models.Model, AdmetionInfo):
 		assert len(ids) == 1, 'This option should only be used for a single id at a time.'
 		ir_model_data = self.pool.get('ir.model.data')
 		try:
-			template_id = ir_model_data.get_object_reference(cr, uid, 'manarat_school', 'email_template_manarat_no_available_spot1')[1]
+			template_id = ir_model_data.get_object_reference(cr, uid, 'school_admission', 'email_template_manarat_no_available_spot1')[1]
 		except ValueError:
 			template_id = False
 		try:

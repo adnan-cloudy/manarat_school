@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_level_manarat_read,school_admission.level_manarat_read,school_admission.model_manarat_level,,1,0,0,0
+access_level_manarat_edit,school_admission.level_manarat_edit,school_admission.model_manarat_level,school_admission.group_pr,1,1,1,1
+access_doc_manarat,school_admission.doc_manarat,school_admission.model_manarat_document,,1,1,1,1
+access_doc_manarat_title,school_admission.doc_manarat_title,school_admission.model_manarat_document_title,,1,1,1,1
+
+access_lead_manarat,crm.lead_manarat_teacher,crm.model_crm_lead,,1,1,0,0
+access_payment_manarat,crm.payment_manarat_teacher,crm.model_crm_payment_mode,,1,1,0,0
+access_lead_manarat_pr,crm.lead_manarat_pr,crm.model_crm_lead,school_admission.group_pr,1,1,1,1
+access_lead_manarat_prAssAmr,crm.lead_manarat_prAssAmr,crm.model_crm_lead,school_admission.group_prAssAmr,1,1,1,1
+access_lead_manarat_AssLan,crm.lead_manarat_AssLan,crm.model_crm_lead,school_admission.group_AssLan,1,1,1,1
+
+access_pricelist_manarat,product.price_manarat,product.model_product_pricelist,,1,1,1,1
+
+

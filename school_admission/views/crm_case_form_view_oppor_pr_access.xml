@@ -4,8 +4,8 @@
 		<record id="crm_case_form_view_oppor_pr_access" model="ir.ui.view">
     <field name="name">crm.case.form.view.oppor.pr.access</field>
     <field name="model">crm.lead</field>
-    <field name="inherit_id" ref="manarat_school.crm_case_form_view_oppor_manarat"/>
-    <field name="groups_id" eval="[(6, 0, [ref('manarat_school.group_pr') ])]"/>
+    <field name="inherit_id" ref="school_admission.crm_case_form_view_oppor_manarat"/>
+    <field name="groups_id" eval="[(6, 0, [ref('school_admission.group_pr') ])]"/>
     <field name="arch" type="xml">
         <field name="state" position="attributes">
             <!--<attribute name="readonly">0</attribute>

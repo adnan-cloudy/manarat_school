@@ -11,18 +11,18 @@
 						<field name='wait_list' attrs="{'invisible': True}"/>
 						<field name='in_draft' attrs="{'invisible': True}"/>
 						<button name="action_notification_send" string="Send notification" type="object" 
-						groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_AssLan"/>
+						groups="school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_AssLan"/>
 						<!--<button name="" string="Admission in waiting List" class="oe_highlight" attrs="{'invisible': [('wait_list', '=', False)]}" clickable="False"/> -->
-						<button name="check_available_spots" string="Check available spots" states="new" type="object" class="oe_highlight" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_AssLan"/>
-						<button name="check_data_completed" string="Confirm data completed" states="spot_checked" type="object" class="oe_highlight" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_AssLan"/>
-						<button name="check_fees_payment" string="Confirm fees payment" states="data_completed" type="object" class="oe_highlight" groups="manarat_school.group_accounting"/>
-						<button name="check_pass_assessment" string="Pass assessment" states="confirm_fees" type="object" class="oe_highlight" groups="manarat_school.group_teacher"/>
-						<button name="check_installment_complete" string="Documents complete" states="pass_assessment" type="object" class="oe_highlight" groups="manarat_school.group_prAssAmr,manarat_school.group_stuAff"/>
-						<button name="check_invoice_paid" string="Invoice paid" states="installment_complete" type="object" class="oe_highlight" groups="manarat_school.group_accounting,manarat_school.group_pr"/>
-						<button name="check_add_to_class_list" string="Add to class list" states="invoice_paid" type="object" class="oe_highlight" groups="manarat_school.group_stuAff" />
-						<button name="add_to_wait_list" string="Add to waiting list" type="object" attrs="{'invisible': ['|',('wait_list', '=', True),('state', '=', 'added_to_class_list')]}" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_principle"/>
-						<button name="return_to_admession_process" string="Return to admession process" type="object" attrs="{'invisible': ['|',('state', '=', 'added_to_class_list'),('wait_list', '=', False)]}" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_principle"/>
-						<button name="reject" string="Reject" type="object" attrs="{'invisible': ['|',('in_draft', '=', True),('state', '=', 'added_to_class_list')]}" groups="manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_principle"/>
+						<button name="check_available_spots" string="Check available spots" states="new" type="object" class="oe_highlight" groups="school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_AssLan"/>
+						<button name="check_data_completed" string="Confirm data completed" states="spot_checked" type="object" class="oe_highlight" groups="school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_AssLan"/>
+						<button name="check_fees_payment" string="Confirm fees payment" states="data_completed" type="object" class="oe_highlight" groups="school_admission.group_accounting"/>
+						<button name="check_pass_assessment" string="Pass assessment" states="confirm_fees" type="object" class="oe_highlight" groups="school_admission.group_teacher"/>
+						<button name="check_installment_complete" string="Documents complete" states="pass_assessment" type="object" class="oe_highlight" groups="school_admission.group_prAssAmr,school_admission.group_stuAff"/>
+						<button name="check_invoice_paid" string="Invoice paid" states="installment_complete" type="object" class="oe_highlight" groups="school_admission.group_accounting,school_admission.group_pr"/>
+						<button name="check_add_to_class_list" string="Add to class list" states="invoice_paid" type="object" class="oe_highlight" groups="school_admission.group_stuAff" />
+						<button name="add_to_wait_list" string="Add to waiting list" type="object" attrs="{'invisible': ['|',('wait_list', '=', True),('state', '=', 'added_to_class_list')]}" groups="school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_principle"/>
+						<button name="return_to_admession_process" string="Return to admession process" type="object" attrs="{'invisible': ['|',('state', '=', 'added_to_class_list'),('wait_list', '=', False)]}" groups="school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_principle"/>
+						<button name="reject" string="Reject" type="object" attrs="{'invisible': ['|',('in_draft', '=', True),('state', '=', 'added_to_class_list')]}" groups="school_admission.group_pr,school_admission.group_prAssAmr,manarat_school.group_principle"/>
 						
 						<field name="state" widget="statusbar" attrs="{'readonly':True}"/>
 						<!--statusbar_visible="new,spot_checked,data_completed"-->
@@ -34,18 +34,18 @@
 				</div>
 				
 				<button name="136" position="attributes">
-					<attribute name="groups">manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_AssLan</attribute>
+					<attribute name="groups">school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_AssLan</attribute>
 				</button>
 				<button name="action_schedule_meeting" position="attributes">
-					<attribute name="groups">manarat_school.group_pr,manarat_school.group_prAssAmr,manarat_school.group_AssLan</attribute>
+					<attribute name="groups">school_admission.group_pr,school_admission.group_prAssAmr,school_admission.group_AssLan</attribute>
 				</button>
 				
 				<notebook position="before">
 					<group string='Assessment info'>
 							
-						<field name="pr_aprove" groups="manarat_school.group_pr"> </field>
-						<field name="tester_aprove" groups="manarat_school.group_teacher"> </field>
-						<field name="principle_aprove" groups="manarat_school.group_principle"> </field>
+						<field name="pr_aprove" groups="school_admission.group_pr"> </field>
+						<field name="tester_aprove" groups="school_admission.group_teacher"> </field>
+						<field name="principle_aprove" groups="school_admission.group_principle"> </field>
 							
 					</group>
 				</notebook>
